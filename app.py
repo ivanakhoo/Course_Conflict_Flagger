@@ -47,13 +47,8 @@ def upload_file():
             modified_filename = f"mod_{schedule_filename}"
             modified_path = os.path.join(app.config['PROCESSED_FOLDER'], modified_filename) 
             
-
-            # # Modify the excel file
-            # python.modify.remove_headers(schedule_path, modified_path)
-            # python.modify.remove_first_row(schedule_path, modified_path)
-            # python.modify.delete_cells(modified_path, "G1:K1")
-            # python.modify.insert_cells(modified_path)
-            # python.modify.rename_column(modified_path)
+            # Modify the excel file
+            python.modify.shift_and_delete_rows(schedule_path)
 
             # Call the process function to modify the file
             python.flagger.process(schedule_path, conflict_path, output_path)
