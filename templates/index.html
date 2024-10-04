@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <title>Course Schedule Conflict Finder</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Course Schedule Conflict Finder</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="course_schedule">Proposed Course Schedule:</label>
+            <input type="file" name="course_schedule" id="course_schedule" required><br><br>
+            <label for="course_conflict">Course Conflict Survey:</label>
+            <input type="file" name="course_conflict" id="course_conflict" required><br><br>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
