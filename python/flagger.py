@@ -196,7 +196,6 @@ def highlighter(compiledList, file_path, new_file_path):
     wb.save(new_file_path)
 
 
-
 # Helper function to highlight and write conflicting row indices
 def highlight_and_write(ws, row_idx, conflicting_row_idx, highlight_color):
     # Highlight the row
@@ -206,13 +205,19 @@ def highlight_and_write(ws, row_idx, conflicting_row_idx, highlight_color):
     
     # Write the conflicting row information in the first column
     current_value = ws.cell(row=row_idx, column=1).value
+    
+    # Initialize a set to store unique conflicting indices
+    existing_conflicts = set()
+    
     if current_value:
-        # If the cell is not empty, append the conflicting row
-        ws.cell(row=row_idx, column=1, value=f"{current_value}, {conflicting_row_idx}")
-    else:
-        # If the cell is empty, write the conflicting row information
-        ws.cell(row=row_idx, column=1, value=f"Conflicting with row indices: {conflicting_row_idx}")
-
+        # Extract existing indices and add them to the set
+        existing_conflicts = set(re.findall(r'\d+', str(current_value)))
+    
+    # Add the new conflicting index to the set
+    existing_conflicts.add(str(conflicting_row_idx))
+    
+    # Update the cell with the unique conflicting indices
+    ws.cell(row=row_idx, column=1, value=f"Conflicting with row indices: {', '.join(sorted(existing_conflicts))}")
 
 
 # Check if all courses in a dataframe conflict, classifying as hard, medium, or soft.
