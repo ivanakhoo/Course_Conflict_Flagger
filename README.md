@@ -1,8 +1,8 @@
-# Course Schedule Conflict Flagger
+# Course Conflict Flagger
 
 ## Overview
 
-The Course Scheduling Conflict Highlighter is a Python-based application designed to help students and academic advisors at Berry College identify and manage course conflicts. This tool utilizes data gathered from a comprehensive school-wide survey to minimize course conflicts in Berry College's School of Mathematics and Natural Science (MNS).
+The Course Conflict Flagger is a Python-based application designed to help students and academic advisors at Berry College identify and manage course conflicts. This tool utilizes data gathered from a comprehensive school-wide survey to minimize course conflicts in Berry College's School of Mathematics and Natural Science (MNS).
 
 ## Key Features
 
